@@ -6,11 +6,56 @@ body {
     background-color: #FC6471;
 }
 
+.webpage {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.control-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    gap: 20px;
+}
+.control-panel > button {
+    min-width: 41%;
+    aspect-ratio: 5/1;
+    border-radius: 10px;
+    outline: none;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 23px;
+    background-color: #7d5ba6;
+    border: none;
+    transition: all .1s ease-in-out;
+}
+
+.control-panel > button:hover
+{
+  opacity: 1;
+  background-color: #8CAAB7;
+  transform: scale(1.1);
+
+}
+
+.control-panel > button:active
+{
+  background-color: rgb(136, 111, 104);
+}
+
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
+}
+
+.title {
+    margin-top: 25px;
+    margin-bottom: -25px;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 64px;
 }
 
 .grid-container { 
@@ -27,7 +72,13 @@ body {
 .square {
     background-color: #DDDDDD;
 }
+
+.square:hover {
+    background-color: black;
+}
+
 .slider-container {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
