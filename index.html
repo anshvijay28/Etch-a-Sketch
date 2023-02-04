@@ -12,11 +12,20 @@
     <script src = "index.js" defer></script>
 </head>
 <body>
-    <div class = "container">
-        <div class = "grid-container"></div>
-        <div class = "slider-container">
-            <input type="range" min="1" max="20" value="10" class="slider">
-            <output class = "output">10</output>
+    <div class = "webpage">
+        <div class = "control-panel">
+            <button id = "color-button">Color</button>
+            <button id = "reset-button">Reset</button>
+            <button id = "rainbow-button">Rainbow</button>
+            <button id = "grid-button">Grid</button>
+        </div>
+        <div class = "container">
+            <h1 class = "title">Etch-a-sketch</h1>
+            <div class = "grid-container"></div>
+            <div class = "slider-container">
+                <input type="range" min="1" max="64" value="10" class="slider">
+                <output class = "output">10</output>
+            </div>
         </div>
     </div>
 </body>
