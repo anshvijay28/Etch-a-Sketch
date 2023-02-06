@@ -44,6 +44,10 @@ resetButton.addEventListener("click", e => {
     reset();
 });
 
+gridButton.addEventListener("click", e => {
+    container.classList.toggle("grid-borders");
+});
+
 slider.addEventListener('input', function() {
     clearContainer();
     sliderOutput.textContent = slider.value;
