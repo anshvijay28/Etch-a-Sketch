@@ -78,10 +78,6 @@ body {
     background-color: #DDDDDD;
 }
 
-.square:hover {
-    background-color: black;
-}
-
 .slider-container {
     margin-top: 50px;
     display: flex;
