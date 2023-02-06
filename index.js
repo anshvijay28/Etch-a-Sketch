@@ -1,12 +1,15 @@
 let slider = document.querySelector('.slider');
 let sliderOutput = document.querySelector('.output');
 const container = document.querySelector('.grid-container');
-let color = "#000000";
 const colorList = ['#ff0000', '#ffa500', '#ffff00', '#008000', '#0000ff', '#4b0082', '#ee82ee'];
+let color = "#000000";
 let passThrough = 0;
 let rainbow = false;
+let shades = false;
+let shadeVal = 0;
 
 const colorButton = document.querySelector('#color-button');
+const shadesButton = document.querySelector('#shades-button');
 const resetButton = document.querySelector('#reset-button');
 const rainbowButton = document.querySelector('#rainbow-button');
 const gridButton = document.querySelector('#grid-button');
@@ -24,6 +27,12 @@ function reset() {
     squares.forEach(square => square.addEventListener('mouseenter', e => {
         if (rainbow) {
             square.style.backgroundColor = colorList[passThrough];
+        } else if (shades) {
+            if (shadeVal == 999999) {
+                shadeVal = 0;
+            }
+            square.style.backgroundColor = "#" + shadeVal.toString();
+            shadeVal = shadeVal + 111111;
         } else {
             square.style.backgroundColor = color;
         }
@@ -55,7 +64,12 @@ reset();
 resetButton.addEventListener("click", e => {
     reset();
     rainbow = false;
+    shades = false;
     color = "#000000";
+});
+shadesButton.addEventListener('click', e => {
+    shades = true;
+    rainbow = false;
 });
 
 gridButton.addEventListener("click", e => {
@@ -65,10 +79,12 @@ gridButton.addEventListener("click", e => {
 colorButton.addEventListener("click", e => {
     color = prompt("Enter color code: ");
     rainbow = false;
+    shades = false;
 });
 
 rainbowButton.addEventListener("click", e => {
     rainbow = true;
+    shades = false;
 });
 
 
@@ -86,6 +102,12 @@ slider.addEventListener('input', function() {
     squares.forEach(square => square.addEventListener('mouseenter', (e) => {
         if (rainbow) {
             square.style.backgroundColor = colorList[passThrough];
+        } else if (shades) {
+            if (shadeVal == 999999) {
+                shadeVal = 0;
+            }
+            square.style.backgroundColor = "#" + shadeVal.toString();
+            shadeVal = shadeVal + 111111;
         } else {
             square.style.backgroundColor = color;
         }
