@@ -36,12 +36,12 @@ body {
   opacity: 1;
   background-color: #8CAAB7;
   transform: scale(1.1);
-
 }
 
 .control-panel > button:active
 {
   background-color: rgb(136, 111, 104);
+  transform: scale(1.2);
 }
 
 .container {
