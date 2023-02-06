@@ -60,14 +60,18 @@ body {
 
 .grid-container { 
     display: grid; 
-    grid-gap: 1px;
     width: 33vw;
     aspect-ratio: 1/1;
     margin: auto;
     margin-top: 50px;
     background-color: #ACFCD9;
-    border: 1px #ACFCD9 solid;
 }
+
+.grid-borders {
+    border: 1px #ACFCD9 solid;
+    grid-gap: 1px;
+}
+
 
 .square {
     background-color: #DDDDDD;
