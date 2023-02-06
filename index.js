@@ -1,6 +1,7 @@
 let slider = document.querySelector('.slider');
 let sliderOutput = document.querySelector('.output');
 const container = document.querySelector('.grid-container');
+let color = "#000000";
 
 const colorButton = document.querySelector('#color-button');
 const resetButton = document.querySelector('#reset-button');
@@ -17,8 +18,8 @@ function reset() {
     }
     resetSlider();
     const squares = document.querySelectorAll(".square");
-    squares.forEach(square => square.addEventListener('mouseleave', e => {
-        square.style.backgroundColor = "black";
+    squares.forEach(square => square.addEventListener('mouseenter', e => {
+        square.style.backgroundColor = color;
     }));
 }
 
@@ -48,6 +49,11 @@ gridButton.addEventListener("click", e => {
     container.classList.toggle("grid-borders");
 });
 
+colorButton.addEventListener("click", e => {
+    color = prompt("Enter color code: ");
+});
+
+
 slider.addEventListener('input', function() {
     clearContainer();
     sliderOutput.textContent = slider.value;
@@ -59,8 +65,8 @@ slider.addEventListener('input', function() {
         container.appendChild(square);
     }
     const squares = document.querySelectorAll(".square");
-    squares.forEach(square => square.addEventListener('mouseleave', (e) => {
-        square.style.backgroundColor = "black";
+    squares.forEach(square => square.addEventListener('mouseenter', (e) => {
+        square.style.backgroundColor = color; 
     }));
 });
 
